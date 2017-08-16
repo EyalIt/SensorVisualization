@@ -90,7 +90,7 @@ def delete_collection(collection):
 
 def dump_database_to_file():
     """ backup an unused collection and store it in a folder. use mongodump external tool """
-    collection = get_collection()#get_collection_to_backup()
+    collection = get_collection_to_backup()
 
     # get the database and collection name to backup
     name = collection.full_name

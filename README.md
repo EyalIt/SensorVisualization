@@ -14,7 +14,7 @@ This is a client-server application with the following abilities:
         Every 24 hours it activates an auto-backup process, zips the daily collection and stores it in an S3 storage.
         The data can be queried using and html web page.
      b. FE side:
-        In order to query the database, there is a web page stored at http://localhost:8000/query_sensors/
+        In order to query the database, there is a web page stored at http://localhost:8000/query_sensors/.
         The web page contains a few drop-down lists for selecting client ID and sensor type.
         Once "generate graph" button is selected, a histogram of the sensor values from the specific client is extracted 
         from the database and displayed.

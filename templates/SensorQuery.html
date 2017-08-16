@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor Visualization</title>
+</head>
+<body>
+    <form action="/query_sensors/" method="post">
+        <select name="user">
+            {% for user in users %}
+            <option value="{{ user }}" {% if user  == default_user %} selected="selected" {% endif %}>{{ user }}</option>
+            {% endfor %}
+        </select>
+        <select name="sensor_type">
+            {% for option in options %}
+            <option value="{{ option }}" {% if option  == default_sensor %} selected="selected" {% endif %}>{{ option }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="generate graph"></input>
+
+        <div>
+            <p></p>
+            {{ bar_chart.render(is_unicode=True)|safe }}
+        </div>
+    </form>
+</body>
+</html>

@@ -1,10 +1,6 @@
 import tarfile
-
 import datetime
 import threading
-
-import os
-
 import database
 
 from boto.s3.connection import S3Connection

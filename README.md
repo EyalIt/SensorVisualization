@@ -19,12 +19,14 @@ This is a client-server application with the following abilities:
         Once "generate graph" button is selected, a histogram of the sensor values from the specific client is extracted 
         from the database and displayed.
         
-In order to run the appliaction:
+        
+In order to run the appliaction locally:
   1. run mongoDb 
   2. make sure the mongodump executable is located under "C:\Program Files\MongoDB\Server\3.4\bin"
   3. add python path to your environment variables
   4. set the environment variables that contain the AWS secret key not going to write them here :-)  
   5. run "python main.py"
+  
   
 Future Enhancements:
   1. Aggregate a few samples and send them to the server as a batch

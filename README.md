@@ -19,4 +19,10 @@ This is a client-server application with the following abilities:
         Once "generate graph" button is selected, a histogram of the sensor values from the specific client is extracted 
         from the database and displayed.
         
-     
+Future Enhancements:
+  1. Aggregate a few samples and send them to the server as a batch
+  2. Zip the data that is sent to the server to reduce the load
+  3. Create a producer-consumer pipeline at the server side in case we would like to run some manipulation on the received data 
+     (machine learning classifier for example)
+  4. Error handling and logging 
+  5. Sensor histogram web page should work with AJAX to handle the update without refreshing the whole page     

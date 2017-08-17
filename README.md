@@ -19,10 +19,18 @@ This is a client-server application with the following abilities:
         Once "generate graph" button is selected, a histogram of the sensor values from the specific client is extracted 
         from the database and displayed.
         
+In order to run the appliaction:
+  1. run mongoDb 
+  2. make sure the mongodump executable is located under "C:\Program Files\MongoDB\Server\3.4\bin"
+  3. add python path to your environment variables
+  4. set the environment variables that contain the AWS secret key not going to write them here :-)  
+  5. run "python main.py"
+  
 Future Enhancements:
   1. Aggregate a few samples and send them to the server as a batch
   2. Zip the data that is sent to the server to reduce the load and add encryption
   3. Create a producer-consumer pipeline at the server side in case we would like to run some manipulation on the received data 
      (machine learning classifier for example)
   4. Error handling and logging 
-  5. Sensor histogram web page should work with AJAX to handle the update without refreshing the whole page     
+  5. Sensor histogram web page should work with AJAX to handle the update without refreshing the whole page   
+  6. Create a configuration file that will contain environment variables, making the application suitable for both Linux and Windows 

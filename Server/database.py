@@ -117,3 +117,4 @@ def dump_database_to_file():
         return path
     except Exception, err:
         print err
+        return None

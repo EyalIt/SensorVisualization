@@ -52,7 +52,8 @@ def backup():
     path = database.dump_database_to_file()
 
     # archive the path to a gzip file
-    filename = archive(path)
+    if (path != None):
+        filename = archive(path)
 
-    # backup to S3
-    save_file_in_s3(filename)
+        # backup to S3
+        save_file_in_s3(filename)

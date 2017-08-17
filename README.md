@@ -24,7 +24,7 @@ In order to run the appliaction locally:
   1. run mongoDb 
   2. make sure the mongodump executable is located under "C:\Program Files\MongoDB\Server\3.4\bin"
   3. add python path to your environment variables
-  4. set the environment variables that contain the AWS secret key not going to write them here :-)  
+  4. set the environment variables that contain the AWS secret key. not going to write them here :-)  
   5. run "python main.py"
   
 

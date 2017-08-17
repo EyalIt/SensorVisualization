@@ -1,14 +1,11 @@
 import tarfile
 import datetime
 import threading
+import boto3 as boto3
 import database
 
-from boto.s3.connection import S3Connection
-from boto.s3.key import Key
 
-S3_BUCKET_NAME = "sensor_visualization_backup"
-AWS_ACCESS_KEY = "Sensor"
-AWS_SECRET_ACCESS_KEY = "Visualization"
+S3_BUCKET_NAME = r"sensorvisualization"
 
 # backup interval is 24 hours
 BACKUP_INTERVAL = 60 * 60 * 24
@@ -29,11 +26,12 @@ def run():
         event.wait(BACKUP_INTERVAL)
 
 def save_file_in_s3(filename):
-    conn = S3Connection(AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY)
-    bucket = conn.get_bucket(S3_BUCKET_NAME)
-    k = Key(bucket)
-    k.key = filename
-    k.set_contents_from_filename(filename)
+    try:
+        # create the s3 client and upload the file
+        s3_client = boto3.client('s3')
+        s3_client.upload_file(filename, S3_BUCKET_NAME, filename)
+    except Exception, err:
+        print err
 
 def get_archive_filename():
     """ return the archive name (today's date) """

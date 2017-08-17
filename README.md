@@ -27,7 +27,15 @@ In order to run the appliaction locally:
   4. set the environment variables that contain the AWS secret key not going to write them here :-)  
   5. run "python main.py"
   
-  
+
+In order to run the clients locally and connect to a remote server:
+  1. in "main.py" file change the following:
+    1. In main function, change url to be "ec2-13-58-140-57.us-east-2.compute.amazonaws.com"
+    2. Activate the client only by commenting out "initiate_server" 
+    3. In order to view the histogram web page, go the the following URL - 
+       http://ec2-13-58-140-57.us-east-2.compute.amazonaws.com:8000/query_sensors/ 
+
+
 Future Enhancements:
   1. Aggregate a few samples and send them to the server as a batch
   2. Zip the data that is sent to the server to reduce the load and add encryption
